@@ -37,7 +37,7 @@ class bloks(kubs):
             self.__kubu_skaits=kubu_skaits
         else:
             print("Neatbilstoša kubu skaita vērtība!!!")
-        self.nosaukums=str(self.krasa)+str(self.__kubu_skaits)
+        self.nosaukums=str(self.krasa)+str(kubu_skaits)
         formas_vertibas = [11,12,13,14,22]
         if formas not in formas_vertibas:
             print("Neatbilst nosacījumiem!!!")
@@ -48,11 +48,10 @@ class bloks(kubs):
 
     def tilpums(self):
         kuba_tilpums=self.mala**3
-        bloka_tilpums=kuba_tilpums*self.kubu_skaits
+        bloka_tilpums=kuba_tilpums*self.__kubu_skaits
         return bloka_tilpums
 
     def mainit_formu(self,jauna_forma):
-        self.nosaukums=str(self.krasa)+str(self.__kubu_skaits)
         formas_vertibas = [11,12,13,14,22]
         if jauna_forma not in formas_vertibas:
             print("Neatbilst nosacījumiem!!!")
@@ -64,7 +63,7 @@ class bloks(kubs):
 #objektI
 orange3=bloks(5,"oranža",3,13)
 print(orange3.nosaukums,orange3.tilpums())
-blue5=bloks(7,"zila",5,23)
+blue5=bloks(7,"ZILS",5,23)
 print(blue5.nosaukums,blue5.derigums)
-blue5.mainit_formu()
+blue5.mainit_formu(12)
 print(blue5.nosaukums,blue5.derigums)
